@@ -8,6 +8,11 @@ set -u
 NUMFILES=10
 WRITESTR=AELD_IS_FUN
 WRITEDIR=/tmp/aeld-data
+
+# Set working directory from path to this script
+# JDE - added for Assignment 4 part 2
+cd `dirname $0`
+
 username=$(cat conf/username.txt)
 
 if [ $# -lt 3 ]
@@ -59,6 +64,9 @@ do
 done
 
 OUTPUTSTRING=$(./finder.sh "$WRITEDIR" "$WRITESTR")
+
+# JDE - For assignment 4 part 1: Write a file with output of the finder command to the /tmp directory
+cat ${OUTPUTSTRING} > /tmp/assignment4-result.txt
 
 # remove temporary directories
 rm -rf /tmp/aeld-data
