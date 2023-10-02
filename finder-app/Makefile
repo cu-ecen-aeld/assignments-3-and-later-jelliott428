@@ -10,7 +10,11 @@ OBJECTS = writer.o
 writer: writer.o
 	$(CC) -o writer $(OBJECTS)
 
-.PHONY: clean
+.PHONY: all
+all: writer.o
+    $(CC) -o writer $(OBJECTS)
 
+
+.PHONY: clean
 clean:
 	rm -f $(wildcard *.o) writer
