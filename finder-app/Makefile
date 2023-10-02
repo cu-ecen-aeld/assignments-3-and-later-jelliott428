@@ -12,7 +12,7 @@ writer: writer.o
 
 .PHONY: all
 all: writer.o
-    $(CC) -o writer $(OBJECTS)
+	$(CC) -o writer $(OBJECTS)
 
 
 .PHONY: clean
